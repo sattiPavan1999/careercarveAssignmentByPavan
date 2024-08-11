@@ -1,0 +1,14 @@
+.text-width{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-element{
+    width: 50vw;
+    font-size: 80%;
+}
+.heading-element{
+    font-weight: 400;
+}

@@ -1,0 +1,41 @@
+.products-div{
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    background-color: black;
+}
+.unordered-list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 85vw;
+}
+@media (max-width: 767px){
+    .unordered-list{
+        width: 100vw;
+    }    
+}
+.checkbox-div{
+    display: flex;
+}
+.all-products-div{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 5%;
+    width: 100vw;
+}
+.selectOption{
+    background-color: transparent;
+    border-width: 0px;
+    font-size: 70%;
+    font-weight: bold;
+}
+.text-ele{
+    font-size: 50%;
+}
+
+@media (max-width: 767px){
+    .CustomizableListsForSmallDevices{
+        display: none
+    }
+}

@@ -1,0 +1,115 @@
+.footer-div{
+    background-color: black;
+}
+.text{
+    color: white;
+    font-size: 50%;
+}
+.input{
+    border-width: 0px;
+    width: 20vw;
+}
+.subscribe-button{
+    width: 15vw;
+    background-color: gray;
+    margin-left: 10px;
+    border-width: 0px;
+}
+.usd-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-first-part{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.footer-first-part-left-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.footer-first-part-right-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.icon{
+    color: white;
+}
+.footer-second-part{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.icons-div{
+    display: flex;
+    justify-content: center;
+}
+.last-image{
+    width: 20vw;
+}
+.last-image-sm{
+    width: 60vw;
+}
+.alignCorrectly{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.sm-first{
+    display: flex;
+    flex-direction: column ;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+@media (max-width: 767px){
+    .for-m-device{
+        display: none;
+    }
+}
+@media (min-width: 768px){
+    .sm-first{
+        display: none;
+    }
+}
+.customercarediv{
+    display: flex;
+}
+.customercare{
+    margin-left: 10px;
+}
+.customercarefulldiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.hr-line{
+    width: 100vw;
+}
+.us-s-device{
+    display: flex;
+}
+.us-s-device-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.select-ele-sm-device{
+    border-width: 0px;
+    background-color: transparent;
+    color: white;
+}
+.last-image-sm-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}

@@ -1,0 +1,20 @@
+.header-div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    color: crimson;
+    height: 3vw;
+    font-size: 20%;
+}
+
+@media (min-width: 768px){
+    .s-device{
+        display: none;
+    }
+}
+@media (max-width: 767px){
+    .m-device{
+        display: none;
+    }
+}

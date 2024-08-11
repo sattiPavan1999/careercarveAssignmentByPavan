@@ -1,0 +1,34 @@
+.text-div{
+    display: flex;
+    justify-content: space-around;
+}
+.hr-line{
+    width: 90vw;
+}
+.hide-filter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-width: 0px;
+    background-color: transparent;
+}
+.hide-heading{
+    margin-left: 10px;
+    text-decoration: underline;
+}
+.select-element{
+    border-width: 0px;
+    background-color: transparent;
+}
+
+@media (max-width: 767px){
+    .hideForMeddium{
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .hideForsmall{
+        display: none;
+    }
+}

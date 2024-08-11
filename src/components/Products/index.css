@@ -1,0 +1,30 @@
+.image-element{
+    width: 80px;
+}
+.title-element{
+    font-size: 50%;
+}
+.product-item{
+    padding: 5px;
+    list-style-type: none;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    width: 20vw;
+}
+
+@media (max-width: 767px){
+    .image-element{
+        width: 40px;
+    }
+    .product-item{
+        padding: 5px;
+        list-style-type: none;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        width: 35vw;
+    }    
+}
