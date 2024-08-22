@@ -1,17 +1,22 @@
 import './index.css'
 
-const Header = () => {
-    return(
-        <div>
-        <div className="header-div m-device">
-            <p>Lorem ipsum dolor</p>
-            <p>Lorem ipsum dolor</p>
-            <p>Lorem ipsum dolor</p>
-        </div>
-        <div className="header-div s-device">
-            <p>Lorem ipsum dolor</p>
+const Header = props => {
+    const {clickHome, clickMentor} = props
 
-        </div>
+    const clickHomeButton = () => {
+        clickHome('home')
+    }
+    const clickMentorButton = () => {
+        clickMentor('mentor')
+    }
+    return(
+        <div className='headerButtons'>
+            <div className='bothbuttons'>
+                <button className='button'
+                        onClick={clickHomeButton}>Go To Home</button>
+                <button className='button'
+                        onClick={clickMentorButton}>Select Mentor</button>
+            </div>
         </div>
     )
 }

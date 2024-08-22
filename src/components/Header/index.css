@@ -1,20 +1,19 @@
-.header-div{
+.headerButtons{
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-self: center;
     background-color: black;
-    color: crimson;
-    height: 3vw;
-    font-size: 20%;
+    color: white;
+    height: 10vh;
 }
-
-@media (min-width: 768px){
-    .s-device{
-        display: none;
-    }
+.bothbuttons{
+    width: 50vw;
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
 }
-@media (max-width: 767px){
-    .m-device{
-        display: none;
-    }
+.button{
+    border-width: 0px;
+    background-color: transparent;
+    color: white;
 }

@@ -1,0 +1,11 @@
+.nameDiv{
+    display: flex;
+    flex-direction: column;
+}
+.payment{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+}

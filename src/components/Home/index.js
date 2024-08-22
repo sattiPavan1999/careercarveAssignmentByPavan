@@ -1,139 +1,78 @@
 import './index.css'
+import Student from '../Student'
 import { Component } from 'react'
+
 import Header from '../Header'
-import HeadingPage from '../HeadingPage'
-import HeadingAndDescription from '../HeadingAndDescription'
-import Below from '../Below'
-import Products from '../Products'
-import Footer from '../Footer'
 
-class Home extends Component {
+class Home extends Component{
     state = {
-        newData: [],
-        hideOrShow: true
-    }
-    componentDidMount(){
-        this.getData()
-    }
-    getData = async () => {
-        const url = "https://fakestoreapi.com/products"
-        const response = await fetch(url)
-        if(response.ok){
-            const data = await response.json()
-            const updatedData = data.map(eachItem => ({
-                category: eachItem.category,
-                description: eachItem.description,
-                id: eachItem.id,
-                image: eachItem.image,
-                price: eachItem.price,
-                rating: eachItem.rating,
-                title: eachItem.title
-            }))
-            this.setState({
-                newData: updatedData
-            })
-        }
-        
+        studentButton: false,
+        mentorButton: false
     }
 
-    renderCustomizableLists = () => {
-        return(
-            <div className='CustomizableListsForSmallDevices'>
-                        <div className='checkbox-div'>
-                            <input type="checkbox"/>
-                            <p>CUSTOMIZBLE</p>
-                        </div>
-                        <hr/>
-                        <div>
-                            <select className='selectOption'>
-                                <option>IDEAL FOR</option>
-                            </select>
-                            <p className='text-ele'>ALL</p>
-                        </div>
-                        <hr/>
-                        <div>
-                            <select className='selectOption'>
-                                <option>OCCATION</option>
-                            </select>
-                            <p className='text-ele'>ALL</p>
-                        </div>
-                        <hr/>
-                        <div>
-                            <select className='selectOption'>
-                                <option>WORK</option>
-                            </select>
-                            <p className='text-ele'>ALL</p>
-                        </div>
-                        <hr/>
-                        <div>
-                            <select className='selectOption'>
-                                <option>FABRIC</option>
-                            </select>
-                            <p className='text-ele'>ALL</p>
-                        </div>
-                        <hr/>
-                        <div>
-                            <select className='selectOption'>
-                                <option>SEGMENT</option>
-                            </select>
-                            <p className='text-ele'>ALL</p>
-                        </div>
-                        <hr/>
-                        <div>
-                            <select className='selectOption'>
-                                <option>SUITABLE FOR</option>
-                            </select>
-                            <p className='text-ele'>ALL</p>
-                        </div>
-                        <hr/>
-                        <div>
-                            <select className='selectOption'>
-                                <option>RAW MATERIALS</option>
-                            </select>
-                            <p className='text-ele'>ALL</p>
-                        </div>
-                        <hr/>
-                        <div>
-                            <select className='selectOption'>
-                                <option>PATTERN</option>
-                            </select>
-                            <p className='text-ele'>ALL</p>
-                        </div>
-                        <hr/>
-            </div>
-        )
-    }
-
-    onClickHide = () => {
+    clickStudent = () => {
         this.setState(prevState => ({
-            hideOrShow: !prevState.hideOrShow
+            studentButton: true,
+            mentorButton: false
+        }))
+    }
+
+    clickMentor = () => {
+        this.setState(prevState => ({
+            studentButton: false,
+            mentorButton: true
+        }))
+    }
+
+    renderHome = () => {
+        const {studentButton, mentorButton} = this.state
+        const bothStudentMentor = studentButton || mentorButton
+        
+            if(!bothStudentMentor){
+                return(
+                    <div className="homeDiv">
+                        <h3>SELECT</h3>
+                        <div className="buttonDiv">
+                            <button onClick={this.clickStudent}>STUDENT</button>
+                            <button onClick={this.clickMentor}>MENTOR</button>
+                        </div>
+                    </div>
+                )
+            }
+            else if(studentButton){
+                return(
+                    <div className="homeDiv">
+                        <Student/>
+                    </div>
+                )
+                
+            }   
+
+    }
+
+    clickHome = name => {
+        const {studentButton, mentorButton} = this.state
+        this.setState({
+            studentButton: false,
+            mentorButton: false        
+        })
+    }
+
+    clickMentor = name => {
+        this.setState(prevState => ({
+            studentButton: true,
+            mentorButton: false
         }))
     }
 
     render(){
-        const {newData, hideOrShow} = this.state
-
+        const {studentButton, mentorButton} = this.state
         return(
-            <div className='fullbg'>
-                <Header/>
-                <HeadingPage/>
-                <hr/>
-                <HeadingAndDescription/>
-                <Below onClickHide={this.onClickHide}
-                       hideOrShow={hideOrShow}/>
-                <div className='all-products-div'>
-                    {hideOrShow && this.renderCustomizableLists()}
-                    <div>
-                        <ul className='unordered-list'>
-                            {newData.map(eachItem => (
-                                <Products eachItem={eachItem}
-                                        key={eachItem.id}/>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-                <Footer/>
-            </div>
+            <>
+            <Header clickHome={this.clickHome}
+                    clickMentor={this.clickMentor}/>
+            {this.renderHome()}
+            </>  
         )
     }
 
